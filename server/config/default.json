@@ -8,8 +8,8 @@
 		"db": "{ native_parser: true}",
 		"server": "{ poolSize: 5 }",
 		"user": "admin",
-        "pass": "admin",
-        "database": "project_node_vue",
+		"pass": "admin",
+		"database": "project_node_vue",
 		"host": "localhost",
 		"port": 3306
 	},

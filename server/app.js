@@ -5,23 +5,28 @@ var cookieParser = require('cookie-parser');
 var morgan = require('morgan');
 
 
-// import mongoose from 'mongoose'
+
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import config from 'config'
 
 var app = express();
 
-// let options = {
-//   useNewUrlParser: config.get("useNewUrlParser"),  
-//   db: config.get("db"),  
-//   server: config.get("server"),
-//   user:  config.get("user"),
-//   pass: config.get("pass"),
-  
-// }
 
-// mongoose.connect('mongodb://localhost:27017/shopping', options, (err) => {
+import mongoose from 'mongoose'
+
+mongoose.Promise = require('bluebird');
+
+let options = {
+  useNewUrlParser: config.get("mongodb.useNewUrlParser"),  
+  db: config.get("mongodb.db"),  
+  server: config.get("mongodb.server"),
+  user:  config.get("mongodb.user"),
+  pass: config.get("mongodb.pass"),
+  
+}
+
+// mongoose.connect('mongodb://localhost:27017/project_vue_node', options, (err) => {
 //   if(err) {
 //     console.log(`Connect DB failed. Error ${err}`);    
 //   } else {
@@ -31,23 +36,35 @@ var app = express();
 
 
 
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
 
-app.use(morgan('combine'));
+app.use(morgan('combined'))
+
+
 app.use(bodyParser.json())
 app.use(cors())
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 // CẤU HÌNH STATIC 2 KIỂU VIẾT
 // app.use("/static", express.static(__dirname + "/public"))
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
+
+//MIDDELEWARE VIEW SỬA LẠI CHO GỌN
+// Import thư mục router rồi Include router index
+const routes = require(__dirname + "/routes")
+app.use(routes)
 
 /* 
   MIDDELEWARE VIEW DEFAULT
@@ -55,12 +72,6 @@ app.use(express.static(path.join(__dirname, 'public')));
   app.use('/', indexRouter);
 
   */
-
-//MIDDELEWARE VIEW SỬA LẠI CHO GỌN
-// Import thư mục router rồi Include router index
-const routes = require(__dirname + "/routes")
-app.use(routes)
-
 
 
 // catch 404 and forward to error handler

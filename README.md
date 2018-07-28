@@ -14,6 +14,6 @@ This is my Git.
 You can clone the repository wherever you want. (I like to keep it in `~/Projects/`, with `~/projex` as a symlink.) The script will pull in the latest version and copy the files to your home folder.
 
 ```bash
-git clone https://github.com/anhthanh96vp/node-postgres.git
+git clone https://github.com/anhthanh96vp/node-vue-x2js.git
 
 
