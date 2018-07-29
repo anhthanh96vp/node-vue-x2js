@@ -1,4 +1,4 @@
-# ThànhNguyễn Profile
+# ThànhNa Profile
 
 ![Screenshot of my shell prompt](https://code.visualstudio.com/assets/updates/1_14/gitignore.gif)
 
