@@ -15,7 +15,9 @@ module.exports = {
     'vue'
   ],
   rules: {
-  	"indent": 0,
+    /* eslint-disable */
+    "indent": [2, "tab"],
+    "no-tabs": 0,
     'generator-star-spacing': 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-// router.use("/users", require(__dirname + "/userRoutes"))
+router.use("/test", require(__dirname + "/testRoutes"))
 
 router.post('/register', (req,res)=>{
 	console.log(req.body)

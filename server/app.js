@@ -26,17 +26,20 @@ let options = {
   
 }
 
-// mongoose.connect('mongodb://localhost:27017/project_vue_node', options, (err) => {
-//   if(err) {
-//     console.log(`Connect DB failed. Error ${err}`);    
-//   } else {
-//     console.log('Connect DB successfully');
-//   }
-// });
+mongoose.connect(`mongodb://localhost:27017/${config.get("mongodb.database")}`, options, (err) => {
+  if(err) {
+    console.log(`Connect DB failed. Error ${err}`);    
+  } else {
+    console.log('Connect DB successfully');
+  }
+});
 
-
-
-
+// mkdir /c/Users/Administrator/Desktop/node-vue-x2js/server/database
+// mongod --port 27017 --dbpath /c/Users/Administrator/Desktop/node-vue-x2js/server/database
+// mongo --port 27017
+// db.createUser({user:" admin", pwd:" admin", roles: ["readWrite", "dbAdmin", "dbOwner"]})
+// mongod --auth --port 27017 --dbpath /c/Users/Administrator/Desktop/node-vue-x2js/server/database
+// mongo --port 27017 -u "admin" -p "admin" --authenticationDatabase "project_node_vue"
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

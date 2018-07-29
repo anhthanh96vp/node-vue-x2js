@@ -14,7 +14,7 @@
                 </div>
                 <div class="col">
                     <div class="md-form">
-                        <input type="email" id="materialRegisterFormLastName" class="form-control">
+                        <input type="text" id="materialRegisterFormLastName" class="form-control">
                         <label for="materialRegisterFormLastName">Last name</label>
                     </div>
                 </div>

@@ -9,9 +9,7 @@
 		"server": "{ poolSize: 5 }",
 		"user": "admin",
 		"pass": "admin",
-		"database": "project_node_vue",
-		"host": "localhost",
-		"port": 3306
+		"database": "project_node_vue"
 	},
 	"salt": 10,
 	"key": "key",
