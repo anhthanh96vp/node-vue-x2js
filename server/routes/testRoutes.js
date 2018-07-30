@@ -1,4 +1,5 @@
 import express from "express"
+import { isNumeric, isEmail } from 'validator';
 const router = express.Router()
 import { SUCCESS, FAILED } from "../constans.js"
 
@@ -16,14 +17,14 @@ router.get("/", async (req, res) => {
 		} else {
 			res.json({
 				status: FAILED,
-				data: "",
+				data: {},
 				message: `Lỗi trong quá trình lấy danh sách user`
 			})
 		}
 	} catch (error) {
 		res.json({
 			status: FAILED,
-			data: "",
+			data: {},
 			message: `Lỗi xảy ra trong quá trình lấy dữ liệu user từ cơ sở dữ liệu ${error}`
 		})
 	}
@@ -41,22 +42,30 @@ router.get("/limit", async (req, res) => {
 		} else {
 			res.json({
 				status: FAILED,
-				data: "",
+				data: {},
 				message: `Lỗi trong quá trình lấy danh sách user`
 			})
 		}
 	} catch (error) {
 		res.json({
 			status: FAILED,
-			data: "",
+			data: {},
 			message: `Lỗi xảy ra trong quá trình lấy dữ liệu user từ cơ sở dữ liệu ${error}`
 		})
 	}
 })
 
-// Mai hoi thay hoang lam sao chay
 router.get("/criteria", async (req, res) => {
-	let limit = req.query.limit
+	let limit = req.query.limit;
+	if (!isNumeric(limit)) {
+		res.json({
+			status: FAILED,
+			data: {},
+			message: `Limit phải là số`
+		})
+		return;
+	}
+	limit = parseInt(limit);
 	try {
 		let allUserCriteria = await UserControllers.getAllUserCriteria(limit)
 		if (allUserCriteria) {
@@ -68,21 +77,22 @@ router.get("/criteria", async (req, res) => {
 		} else {
 			res.json({
 				status: FAILED,
-				data: "",
+				data: {},
 				message: `Lỗi trong quá trình lấy danh sách user`
 			})
 		}
 	} catch (error) {
 		res.json({
 			status: FAILED,
-			data: "",
+			data: {},
 			message: `Lỗi xảy ra trong quá trình lấy dữ liệu user từ cơ sở dữ liệu ${error}`
 		})
 	}
 })
 
-// chua chay not
+
 router.get("/criteriaCheckLimit", async (req, res) => {
+
 	let criteria = { name: new RegExp(req.query.name, "i") }
 	let limit = parseInt(req.query.limit) > 0 ? parseInt(req.query.limit) : 100
 	try {
@@ -96,14 +106,14 @@ router.get("/criteriaCheckLimit", async (req, res) => {
 		} else {
 			res.json({
 				status: FAILED,
-				data: "",
+				data: {},
 				message: `Lỗi trong quá trình lấy danh sách user`
 			})
 		}
 	} catch (error) {
 		res.json({
 			status: FAILED,
-			data: "",
+			data: {},
 			message: `Lỗi xảy ra trong quá trình lấy dữ liệu user từ cơ sở dữ liệu ${error}`
 		})
 	}
@@ -122,14 +132,14 @@ router.post("/", async (req, res) => {
 		} else {
 			res.json({
 				status: FAILED,
-				data: "",
+				data: {},
 				message: `Lỗi trong quá trình tạo mới user`
 			})
 		}
 	} catch (error) {
 		res.json({
 			status: FAILED,
-			data: "",
+			data: {},
 			message: `Lỗi xảy ra trong quá trình tạo mới user ở cơ sở dữ liệu ${error}`
 		})
 	}
@@ -149,14 +159,14 @@ router.get("/:id", async (req, res) => {
 			} else {
 				res.json({
 					status: FAILED,
-					data: "",
+					data: {},
 					message: `Lỗi trong quá trình truy xuất user`
 				})
 			}
 		} catch (error) {
 			res.json({
 				status: FAILED,
-				data: "",
+				data: {},
 				message: `Lỗi xảy ra trong quá trình truy xuất user ở cơ sở dữ liệu ${error}`
 			})
 		}
@@ -177,14 +187,14 @@ router.put("/", async (req, res) => {
 			} else {
 				res.json({
 					status: FAILED,
-					data: "",
+					data: {},
 					message: `Lỗi trong quá trình cập nhật user`
 				})
 			}
 		} catch (error) {
 			res.json({
 				status: FAILED,
-				data: "",
+				data: {},
 				message: `Lỗi xảy ra trong quá trình cập nhật user ở cơ sở dữ liệu ${error}`
 			})
 		}
@@ -205,14 +215,14 @@ router.delete("/", async (req, res) => {
 			} else {
 				res.json({
 					status: FAILED,
-					data: "",
+					data: {},
 					message: `Lỗi trong quá trình xóa user`
 				})
 			}
 		} catch (error) {
 			res.json({
 				status: FAILED,
-				data: "",
+				data: {},
 				message: `Lỗi xảy ra trong quá trình xóa user ở cơ sở dữ liệu ${error}`
 			})
 		}

@@ -1,4 +1,5 @@
 /*eslint no-trailing-spaces: ["error", { "ignoreComments": true }]*/
+/* eslint-disable */
 module.exports = {
   root: true,
   parserOptions: {
@@ -8,17 +9,17 @@ module.exports = {
     browser: true,
   },
   extends: [
-    'plugin:vue/essential', 
+    'plugin:vue/essential',
     'standard'
   ],
   plugins: [
     'vue'
   ],
   rules: {
-    /* eslint-disable */
-    "indent": [2, "tab"],
+    'vue/script-indent': ["error", 2, { "baseIndent": 1 }],
     "no-tabs": 0,
     'generator-star-spacing': 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }
 }
+/* eslint-disableƒ */
