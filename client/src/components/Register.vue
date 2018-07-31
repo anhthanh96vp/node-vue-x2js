@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import AuthenticationService from "@/services/AuthenticationServices"
+import AuthenticationService from "@/api/AuthenticationServices"
 export default {
 	data() {
 		return {
