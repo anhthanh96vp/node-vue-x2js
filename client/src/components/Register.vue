@@ -8,13 +8,13 @@
             <div class="form-row">
                 <div class="col">
                     <div class="md-form">
-                        <input type="text" id="materialRegisterFormFirstName" class="form-control">
+                        <input v-model="first_name" type="text" id="materialRegisterFormFirstName" class="form-control">
                         <label for="materialRegisterFormFirstName">First name</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="md-form">
-                        <input type="text" id="materialRegisterFormLastName" class="form-control">
+                        <input v-model="last_name" type="text" id="materialRegisterFormLastName" class="form-control">
                         <label for="materialRegisterFormLastName">Last name</label>
                     </div>
                 </div>
@@ -62,28 +62,33 @@
 </template>
 
 <script>
-import AuthenticationService from '@/services/AuthenticationServices'
+import AuthenticationService from "@/services/AuthenticationServices"
 export default {
-  data () {
-    return {
-      email: "",
-      password: ""
-   }
-  },
-   methods: {
-   	async register() {
-   		const response = await AuthenticationService.register({
-   			email: this.email,
-   			password: this.password
-   		})
-   	}
-   }
+	data() {
+		return {
+			first_name: "",
+			last_name: "",
+			email: "",
+			password: ""
+		}
+	},
+	methods: {
+		async register() {
+			let newUser = {
+				first_name: this.first_name,
+				last_name: this.last_name,
+				email: this.email,
+				password: this.password
+			}
+			const response = await AuthenticationService.register(newUser)
+		}
+	}
 }
 </script>
 
 <style scoped>
-	.card {
-		margin: 0 auto;
-		max-width: 50%;
-	}
+.card {
+	margin: 0 auto;
+	max-width: 50%;
+}
 </style>
