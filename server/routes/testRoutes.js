@@ -65,6 +65,7 @@ router.get("/criteria", async (req, res) => {
 		})
 		return;
 	}
+
 	limit = parseInt(limit);
 	try {
 		let allUserCriteria = await UserControllers.getAllUserCriteria(limit)

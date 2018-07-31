@@ -1,19 +1,24 @@
-const state = {
-	authUser: null
+const user = {
+  state: {
+    auth: {
+      first_name: "",
+      last_name: "",
+      email: "",
+      pasword: "",
+      phone: ""
+    }
+  },
+  actions: {
+    addUser({ commit }, a) {
+      console.log('action', a)
+      commit("addUser", a)
+    }
+  },
+  mutations: {
+    addUser(state, a) {
+      console.log('muta', a)
+      console.log('muta', state)
+    }
+  }
 }
-
-const mutations = {
-	SET_AUTH_USER (state, userObj) {
-		state.authUser = userObj
-	}
-}
-
-const actions = {
-	setUserObject: ({commit}, userObj) => {
-		commit('SET_AUTH_USER', userObj)
-	}
-}
-
-export default {
-	state, mutations, actions
-}
+export default user

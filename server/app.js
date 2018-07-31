@@ -32,21 +32,21 @@ mongoose.connect(`mongodb://localhost:27017/${config.get("mongodb.database")}`, 
   }
 });
 
-// mkdir /c/Users/Administrator/Desktop/node-vue-x2js/server/database
-// mongod --port 27017 --dbpath /c/Users/Administrator/Desktop/node-vue-x2js/server/database
+// mkdir /c/Users/Administrator/Desktop/database
+// mongod --port 27017 --dbpath /c/Users/Administrator/Desktop/database
 // mongo --port 27017
 // use project_node_vue
 // db.createUser({user:"admin", pwd:"admin", roles: ["readWrite", "dbAdmin", "dbOwner"]})
-// mongod --auth --port 27017 --dbpath /c/Users/Administrator/Desktop/node-vue-x2js/server/database
+// mongod --auth --port 27017 --dbpath /c/Users/Administrator/Desktop/database
 // mongo --port 27017 -u "admin" -p "admin" --authenticationDatabase "project_node_vue"
 
 
-// mkdir /Users/thanh/Desktop/node-vue-x2js/server/database2
-// mongod --port 27017 --dbpath /Users/thanh/Desktop/node-vue-x2js/server/database
+// mkdir /Users/thanh/database
+// mongod --port 27017 --dbpath /Users/thanh/database
 // mongo --port 27017
 // use project_node_vue
 // db.createUser({user:"admin", pwd:"admin", roles: ["readWrite", "dbAdmin", "dbOwner"]})
-// mongod --auth --port 27017 --dbpath /Users/thanh/Desktop/node-vue-x2js/server/database
+// mongod --auth --port 27017 --dbpath /Users/thanh/database
 // mongo --port 27017 -u "admin" -p "admin" --authenticationDatabase "project_node_vue"
 
 

@@ -74,7 +74,6 @@ const getUserById = async id => {
 
 const updateOneUserById = async data => {
 	if (data) {
-    console.log('data :', data);
 		try {
 			const userUpdate = await Users.updateOne(
 				{ _id: data.id },

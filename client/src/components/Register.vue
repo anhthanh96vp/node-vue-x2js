@@ -8,36 +8,36 @@
             <div class="form-row">
                 <div class="col">
                     <div class="md-form">
-                        <input v-model="first_name" type="text" id="materialRegisterFormFirstName" class="form-control">
+                        <input :value="newAuth.first_name" type="text" id="materialRegisterFormFirstName" class="form-control">
                         <label for="materialRegisterFormFirstName">First name</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="md-form">
-                        <input v-model="last_name" type="text" id="materialRegisterFormLastName" class="form-control">
+                        <input :value="newAuth.last_name" type="text" id="materialRegisterFormLastName" class="form-control">
                         <label for="materialRegisterFormLastName">Last name</label>
                     </div>
                 </div>
             </div>
             <div class="md-form mt-0">
-                <input type="email" name="email" v-model="email" id="materialRegisterFormEmail" class="form-control">
+                <input :value="newAuth.email" type="email" name="email" id="materialRegisterFormEmail" class="form-control">
                 <label for="materialRegisterFormEmail">E-mail</label>
             </div>
             <div class="md-form">
-                <input type="password" name="password" v-model="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+                <input :value="newAuth.password" type="password" name="password"  id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
                 <label for="materialRegisterFormPassword">Password</label>
                 <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                     At least 8 characters and 1 digit
                 </small>
             </div>           
             <div class="md-form">
-                <input type="password" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                <input :value="newAuth.phone" type="text" id="materialRegisterFormPhone"  class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
                 <label for="materialRegisterFormPhone">Phone number</label>
                 <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
                     Optional - for two step authentication
                 </small>
             </div>
-            <button @click="register" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" >Sign up</button>
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" >Sign up</button>
             <p>or sign up with:</p>
             <a type="button" class="btn-floating btn-fb btn-sm">
                 <i class="fa fa-facebook"></i>
@@ -63,25 +63,35 @@
 
 <script>
 import AuthenticationService from "@/api/AuthenticationServices"
+import HttpClient from "@/helper/HttpClient"
+
 export default {
 	data() {
 		return {
-			first_name: "",
-			last_name: "",
-			email: "",
-			password: ""
+			newAuth: {}
+		}
+	},
+	computed: {
+		user() {
+			return this.$store.user.getters.user
+		},
+		newTask() {
+			return this.$store.user.getters.newTask
 		}
 	},
 	methods: {
-		async register() {
-			let newUser = {
-				first_name: this.first_name,
-				last_name: this.last_name,
-				email: this.email,
-				password: this.password
-			}
-			const response = await AuthenticationService.register(newUser)
+		addUser() {
+            let a = 'ok'
+			this.$store.user.dispatch("addUser", a)
 		}
+		// async register() {
+		// 	console.log("newAuth :", this.newAuth)
+		// let newUser =
+		// // console.log("newAuth :", newAuth)
+		// const response = await AuthenticationService.register(newUser)
+		// const response = HttpClient.post("/register", newUser)
+		// console.log(response)
+		// }
 	}
 }
 </script>

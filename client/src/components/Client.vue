@@ -10,19 +10,17 @@
 </template>
 
 <script>
-import AuthenticationService from "@/services/AuthenticationServices"
-import client from '../helper/HttpClient'
+import AuthenticationService from "@/api/AuthenticationServices"
+import client from "../helper/HttpClient"
 export default {
 	data() {
-		return {
-			
-		}
+		return {}
 	},
 	methods: {
 		async client() {
-			client.get('/users').then((response) => {
-                console.log(response);
-            });
+			client.get("/users").then(response => {
+				console.log(response)
+			})
 		}
 	}
 }
