@@ -23,7 +23,6 @@ let options = {
   server: config.get("mongodb.server"),
   user:  config.get("mongodb.user"),
   pass: config.get("mongodb.pass"),
-  
 }
 
 mongoose.connect(`mongodb://localhost:27017/${config.get("mongodb.database")}`, options, (err) => {
