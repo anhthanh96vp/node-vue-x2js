@@ -1,25 +1,21 @@
-/*eslint no-trailing-spaces: ["error", { "ignoreComments": true }]*/
-/* eslint-disable */
 module.exports = {
   root: true,
+  env: {
+    browser: true,
+    node: true
+  },
   parserOptions: {
     parser: 'babel-eslint'
   },
-  env: {
-    browser: true,
-  },
   extends: [
-    'plugin:vue/essential',
-    'standard'
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    'plugin:vue/essential'
   ],
+  // required to lint *.vue files
   plugins: [
     'vue'
   ],
-  rules: {
-    'vue/script-indent': ["error", 2, { "baseIndent": 1 }],
-    "no-tabs": 0,
-    'generator-star-spacing': 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  }
+  // add your custom rules here
+  rules: {}
 }
-/* eslint-disableƒ */
