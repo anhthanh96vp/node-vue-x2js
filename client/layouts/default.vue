@@ -1,12 +1,10 @@
 <template>
   <div>
-    <ToolBar/>
     <nuxt/>
   </div>
 </template>
 
 <script>
-
 </script>
 
 

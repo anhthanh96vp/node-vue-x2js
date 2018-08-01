@@ -9,8 +9,12 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
+    css: [
+      'assets/main.css'
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' },
       { rel: "stylesheet", href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" },
       { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" },
       { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" }
@@ -22,14 +26,19 @@ module.exports = {
       { type: "text/javascript", src: "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js", body: true }
     ]
   },
-  /*
-  ** Customize the progress bar color
-  */
+  router: {
+      extendRoutes (routes, resolve) {
+        routes.push({
+          name: 'custom',
+          path: '*',
+          component: resolve(__dirname, 'pages/Errors/404.vue')
+        })
+      }
+  },
+  plugins: ['@/plugins/vue-notifications'],
   loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
   build: {
+    vendor: ['axios', 'vue-notifications'],
     /*
     ** Run ESLint on save
     */

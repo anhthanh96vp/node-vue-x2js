@@ -1,2 +1,2 @@
-export const SUCCESS = "Success"
-export const FAILED = "Failed"
+export const SUCCESS = true
+export const FAILED = false

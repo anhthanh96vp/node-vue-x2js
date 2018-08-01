@@ -1,12 +1,7 @@
-var express = require('express');
-var router = express.Router();
+var express = require("express")
+var router = express.Router()
 
-router.use("/test", require(__dirname + "/testRoutes"))
-
-router.post('/register', (req,res)=>{
-	console.log("đã vào post")
- console.log('${req.body} :', req.body);
-})
+router.use("/user", require(__dirname + "/userRoutes"))
 
 
-module.exports = router;
+module.exports = router

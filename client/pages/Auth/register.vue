@@ -8,36 +8,36 @@
             <div class="form-row">
                 <div class="col">
                     <div class="md-form">
-                        <input :value="newAuth.first_name" type="text" id="materialRegisterFormFirstName" class="form-control">
+                        <input v-model="newUser.first_name" type="text" id="materialRegisterFormFirstName" class="form-control">
                         <label for="materialRegisterFormFirstName">First name</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="md-form">
-                        <input :value="newAuth.last_name" type="text" id="materialRegisterFormLastName" class="form-control">
+                        <input v-model="newUser.last_name" type="text" id="materialRegisterFormLastName" class="form-control">
                         <label for="materialRegisterFormLastName">Last name</label>
                     </div>
                 </div>
             </div>
             <div class="md-form mt-0">
-                <input :value="newAuth.email" type="email" name="email" id="materialRegisterFormEmail" class="form-control">
+                <input v-model="newUser.email" type="email" name="email" id="materialRegisterFormEmail" class="form-control">
                 <label for="materialRegisterFormEmail">E-mail</label>
             </div>
             <div class="md-form">
-                <input :value="newAuth.password" type="password" name="password"  id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+                <input v-model="newUser.password" type="password" name="password"  id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
                 <label for="materialRegisterFormPassword">Password</label>
                 <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                     At least 8 characters and 1 digit
                 </small>
             </div>           
             <div class="md-form">
-                <input :value="newAuth.phone" type="text" id="materialRegisterFormPhone"  class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                <input v-model="newUser.phone" type="text" id="materialRegisterFormPhone"  class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
                 <label for="materialRegisterFormPhone">Phone number</label>
                 <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
                     Optional - for two step authentication
                 </small>
             </div>
-            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" >Sign up</button>
+            <button  @click="register" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" >Sign up</button>
             <p>or sign up with:</p>
             <a type="button" class="btn-floating btn-fb btn-sm">
                 <i class="fa fa-facebook"></i>
@@ -62,43 +62,29 @@
 </template>
 
 <script>
-import AuthenticationService from "@/api/AuthenticationServices"
-import HttpClient from "@/helper/HttpClient"
+import User from "@/api/User"
 
 export default {
 	data() {
 		return {
-			newAuth: {
+			newUser: {
 				first_name: "",
 				last_name: "",
 				email: "",
-				passwordL: "",
-				phoneL: ""
+				password: "",
+				phone: ""
+			}
+		}
+	},
+	methods: {
+		async register() {
+			const newUser = this.newUser
+			const response = await User.register(newUser)
+			if (response.data.status) {
+				this.$router.push("/auth/login")
 			}
 		}
 	}
-	// computed: {
-	// 	user() {
-	// 		return this.$store.user.getters.user
-	// 	},
-	// 	newTask() {
-	// 		return this.$store.user.getters.newTask
-	// 	}
-	// },
-	// methods: {
-	// 	addUser() {
-	// 		let a = "ok"
-	// 		this.$store.user.dispatch("addUser", a)
-	// 	}
-	// 	async register() {
-	// 		console.log("newAuth :", this.newAuth)
-	// 	let newUser =
-	// 	// console.log("newAuth :", newAuth)
-	// 	const response = await AuthenticationService.register(newUser)
-	// 	const response = HttpClient.post("/register", newUser)
-	// 	console.log(response)
-	// 	}
-	// }
 }
 </script>
 
