@@ -22,8 +22,6 @@ module.exports = {
       { type: "text/javascript", src: "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js", body: true }
     ]
   },
-  plugins: ['~plugins/vuetify.js'],
-  css: ['~assets/app.styl'],
   /*
   ** Customize the progress bar color
   */
@@ -32,7 +30,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['axios', 'vuetify'],
     /*
     ** Run ESLint on save
     */

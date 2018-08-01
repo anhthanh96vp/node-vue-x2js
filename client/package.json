@@ -14,10 +14,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "mdbootstrap": "^4.5.8",
     "nuxt": "^1.4.1",
     "raven-js": "^3.26.4",
-    "vuetify": "^1.1.9",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

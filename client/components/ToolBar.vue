@@ -1,4 +1,3 @@
-
 <template>
   <v-card
     color="grey lighten-4"
