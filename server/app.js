@@ -32,12 +32,12 @@ mongoose.connect(`mongodb://localhost:27017/${config.get("mongodb.database")}`, 
   }
 });
 
-// mkdir /c/Users/Administrator/Desktop/database
-// mongod --port 27017 --dbpath /c/Users/Administrator/Desktop/database
+// mkdir /c/Users/Administrator/Desktop/Project/database
+// mongod --port 27017 --dbpath /c/Users/Administrator/Desktop/Project/database
 // mongo --port 27017
 // use project_node_vue
 // db.createUser({user:"admin", pwd:"admin", roles: ["readWrite", "dbAdmin", "dbOwner"]})
-// mongod --auth --port 27017 --dbpath /c/Users/Administrator/Desktop/database
+// mongod --auth --port 27017 --dbpath /c/Users/Administrator/Desktop/Project/database
 // mongo --port 27017 -u "admin" -p "admin" --authenticationDatabase "project_node_vue"
 
 

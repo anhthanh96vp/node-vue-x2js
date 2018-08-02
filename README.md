@@ -1,19 +1,17 @@
-# ThànhNa Profile
+# Base Front-end white Vuejs framework Nuxjs and Axios
 
-![Screenshot of my shell prompt](https://code.visualstudio.com/assets/updates/1_14/gitignore.gif)
+## Setup and configure project front end step by step
 
-### Welcome to my Git
-This is my Git. 
+### The technologies used in the project
 
-### Installation
+#### 1. [Vuejs](https://vuejs.org/)
 
-**Warning:** If you want to give these file a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+#### 2. [Nuxtjs](https://nuxtjs.org/)
 
-### Using Git 
+#### 3. [Vuex](https://vuex.vuejs.org/)
 
-You can clone the repository wherever you want. (I like to keep it in `~/Projects/`, with `~/projex` as a symlink.) The script will pull in the latest version and copy the files to your home folder.
+#### 4. [Axios](https://github.com/axios/axios)
 
-```bash
-git clone https://github.com/anhthanh96vp/node-vue-x2js.git
+#### 5. [Element-io](https://element.eleme.io/#/en-US)
 
-
+#### 6. [VeeValidate](https://baianat.github.io/vee-validate/)
