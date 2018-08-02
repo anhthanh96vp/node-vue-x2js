@@ -1,4 +1,4 @@
-# Base Front-end white Vuejs framework Nuxjs and Axios
+# Base Front-end with Vuejs framework Nuxjs and Axios
 
 ## Setup and configure project front end step by step
 
