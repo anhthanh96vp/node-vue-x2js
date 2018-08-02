@@ -10,35 +10,28 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     css: [
-      'assets/main.css'
+      'assets/main.css',
+      'element-ui/lib/theme-default/index.css',
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' },
-      { rel: "stylesheet", href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" },
-      { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" },
-      { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" }
-    ],
-    script: [
-      { type: "text/javascript", src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js", body:true },
-      { type: "text/javascript", src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js", body: true },
-      { type: "text/javascript", src: "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js", body: true },
-      { type: "text/javascript", src: "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js", body: true }
-    ]
+      { href: "element-ui/lib/theme-default/index.css" },
+      { rel: "stylesheet", href: "https://unpkg.com/element-ui/lib/theme-chalk/index.css" }],
+      script: [{ src: "https://unpkg.com/element-ui/lib/index.js", body: true }]
   },
   router: {
-      extendRoutes (routes, resolve) {
-        routes.push({
-          name: 'custom',
-          path: '*',
-          component: resolve(__dirname, 'pages/Errors/404.vue')
-        })
-      }
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/Errors/404.vue')
+      })
+    }
   },
-  plugins: ['@/plugins/vue-notifications'],
+  plugins: ['@/plugins/vue-notifications', 'plugins/element-ui.js'],
   loading: { color: '#3B8070' },
   build: {
-    vendor: ['axios', 'vue-notifications'],
+    vendor: ['axios', 'vue-notifications', 'element-ui'],
     /*
     ** Run ESLint on save
     */

@@ -1,2 +1,2 @@
-export const SUCCESS = true
-export const FAILED = false
+export const SUCCESS = 200
+export const FAILED = 404

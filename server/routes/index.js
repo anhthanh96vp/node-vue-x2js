@@ -1,7 +1,6 @@
 var express = require("express")
 var router = express.Router()
 
-router.use("/user", require(__dirname + "/userRoutes"))
-
+router.use("/auth", require(__dirname + "/AuthRoutes"))
 
 module.exports = router

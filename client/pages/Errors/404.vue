@@ -5,7 +5,6 @@
    <div class="img">
         <img src="@/static/error.png">
    </div>
-    
   </div>
 </template>
 

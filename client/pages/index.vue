@@ -1,17 +1,20 @@
 <template>
   <section class="container">
     <div>
-      <top-nav/>
-    </div>
+      <top-bar/>
+      <side-bar/>      
+          </div>
   </section>
 </template>
 
 <script>
-import TopNav from "~/components/TopNav.vue"
+import TopBar from "~/components/TopBar.vue"
+import SideBar from "~/components/SideBar.vue"
 
 export default {
 	components: {
-		TopNav
+		TopBar,
+		SideBar
 	}
 }
 </script>

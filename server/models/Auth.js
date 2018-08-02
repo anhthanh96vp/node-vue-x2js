@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const UserSchema = mongoose.Schema({
+const AuthSchema = mongoose.Schema({
 	first_name: {
 		type: String,
 		required: true
@@ -37,4 +37,4 @@ const UserSchema = mongoose.Schema({
 // 	return inputString[0].toUpperCase() + inputString.slice(1)
 // })
 
-module.exports = mongoose.model('Users', UserSchema)
+module.exports = mongoose.model('Auth', AuthSchema)
