@@ -9,16 +9,14 @@ module.exports = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "Nuxt.js project" }
     ],
-    css: ["assets/main.css", "element-ui/lib/theme-default/index.css"],
+    css: ["assets/main.css", 'element-ui/lib/theme-chalk/index.css'],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { href: "element-ui/lib/theme-default/index.css" },
-      {
-        rel: "stylesheet",
-        href: "https://unpkg.com/element-ui/lib/theme-chalk/index.css"
-      }
+      { rel: "stylesheet", href: "https://unpkg.com/element-ui/lib/theme-chalk/index.css" }
     ],
-    script: [{ src: "https://unpkg.com/element-ui/lib/index.js", body: true }]
+    script: [
+      { src: "https://unpkg.com/element-ui/lib/index.js", body: true }
+    ]
   },
   router: {
     extendRoutes(routes, resolve) {
@@ -30,9 +28,9 @@ module.exports = {
     }
   },
   plugins: [
-    "~/plugins/vue-notifications",
-    "~/plugins/element-ui.js",
-    '~plugins/vee-validate.js',
+    { src: "~plugins/vue-notifications" },
+    { src: "~plugins/element-ui", ssr: true },
+    { src: "~plugins/vee-validate.js", ssr: true },
   ],
   loading: { color: "#3B8070" },
   build: {
