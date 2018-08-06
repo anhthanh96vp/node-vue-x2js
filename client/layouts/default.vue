@@ -26,33 +26,44 @@ html {
 	margin: 0;
 }
 
-.button--green {
-	display: inline-block;
-	border-radius: 4px;
-	border: 1px solid #3b8070;
-	color: #3b8070;
-	text-decoration: none;
-	padding: 10px 30px;
+.floatleft {
+	float: left;
 }
-
-.button--green:hover {
-	color: #fff;
-	background-color: #3b8070;
+.floatright {
+	float: right;
 }
-
-.button--grey {
-	display: inline-block;
-	border-radius: 4px;
-	border: 1px solid #35495e;
-	color: #35495e;
-	text-decoration: none;
-	padding: 10px 30px;
+.alignleft {
+	float: left;
+	margin-right: 15px;
+}
+.alignright {
+	float: right;
 	margin-left: 15px;
 }
-
-.button--grey:hover {
-	color: #fff;
-	background-color: #35495e;
+.aligncenter {
+	display: block;
+	margin: 0 auto 15px;
+}
+a:focus {
+	outline: 0px solid;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+.fix {
+	overflow: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 15px;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
 }
 </style>
 

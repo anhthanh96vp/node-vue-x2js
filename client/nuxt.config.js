@@ -3,16 +3,18 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "node-vue-mongo",
+    title: "Client",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "Nuxt.js project" }
     ],
-    css: ["assets/main.css", 'element-ui/lib/theme-chalk/index.css'],
+    css: ["~assets/responsive.css", "~assets/main.css", 'element-ui/lib/theme-chalk/index.css'],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: "stylesheet", href: "https://unpkg.com/element-ui/lib/theme-chalk/index.css" }
+      { rel: "stylesheet", href: "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" },
+      { rel: "stylesheet", href: "https://unpkg.com/element-ui/lib/theme-chalk/index.css" },
+
     ],
     script: [
       { src: "https://unpkg.com/element-ui/lib/index.js", body: true }
