@@ -18,6 +18,7 @@
     "nuxt": "^1.4.1",
     "raven-js": "^3.26.4",
     "vee-validate": "^2.0.9",
+    "vue-carousel": "^0.10.0",
     "vue-notifications": "^0.9.0"
   },
   "devDependencies": {
