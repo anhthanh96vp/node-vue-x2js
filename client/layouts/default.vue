@@ -25,7 +25,13 @@ html {
 	box-sizing: border-box;
 	margin: 0;
 }
-
-
+p {
+	font-size: 0.5em;
+}
+a {
+	font-size: 0.8rem;
+	font-weight: 500;
+	text-decoration: none;
+}
 </style>
 

@@ -10,23 +10,16 @@ module.exports = {
       { hid: "description", name: "description", content: "Nuxt.js project" }
     ],
     css: [
-      "~assets/responsive.css",
-      "~assets/main.css",
-      "element-ui/lib/theme-chalk/index.css"
+      { src: "~assets/main.css" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      {
-        rel: "stylesheet",
-        href: "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
-      },
-      {
-        rel: "stylesheet",
-        href: "https://unpkg.com/element-ui/lib/theme-chalk/index.css"
-      }
-    ],
-    script: [{ src: "https://unpkg.com/element-ui/lib/index.js", body: true }]
+    ]
   },
+  modules: [
+    '@nuxtjs/font-awesome',
+    '@nuxtjs/vuetify'
+  ],
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
@@ -38,18 +31,16 @@ module.exports = {
   },
   plugins: [
     { src: "~plugins/vue-notifications" },
-    { src: "~plugins/element-ui", ssr: true },
-    { src: "~plugins/vee-validate.js", ssr: true },
-    { src: "~plugins/vue-carousel.js", ssr: false }
+    { src: "~plugins/vue-carousel.js", ssr: false },
+    { src: "~plugins/vee-validate.js", ssr: true }
   ],
   loading: { color: "#3B8070" },
   build: {
     vendor: [
       "axios",
       "vue-notifications",
-      "element-ui",
       "vee-validate",
-      "vue-carousel"    ],
+      "vue-carousel"],
     /*
     ** Run ESLint on save
     */

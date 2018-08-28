@@ -13,8 +13,9 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/font-awesome": "^1.0.3",
+    "@nuxtjs/vuetify": "^0.4.2",
     "axios": "^0.18.0",
-    "element-ui": "^2.4.5",
     "nuxt": "^1.4.1",
     "raven-js": "^3.26.4",
     "vee-validate": "^2.0.9",
