@@ -7,9 +7,9 @@
 		"useNewUrlParser": true,
 		"db": "{ native_parser: true}",
 		"server": "{ poolSize: 5 }",
-		"user": "admin",
-		"pass": "admin",
-		"database": "project_node_vue"
+		"user": "akke",
+		"pass": "8888",
+		"database": "nodevue"
 	},
 	"salt": 10,
 	"key": "key",
