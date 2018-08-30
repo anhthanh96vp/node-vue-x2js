@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import Auth from "@/api/Auth"
+import Auth from "@/app/services/Auth.js"
 
 export default {
 	data() {

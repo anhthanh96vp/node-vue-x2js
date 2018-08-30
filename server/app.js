@@ -5,49 +5,10 @@ import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 
 
-import mongoose from 'mongoose'
 import cors from 'cors'
 import bodyParser from 'body-parser'
-import config from 'config'
 
 var app = express();
-
-
-
-mongoose.Promise = require('bluebird');
-
-let options = {
-  useNewUrlParser: config.get("mongodb.useNewUrlParser"),
-  db: config.get("mongodb.db"),
-  server: config.get("mongodb.server"),
-  user: config.get("mongodb.user"),
-  pass: config.get("mongodb.pass"),
-}
-
-mongoose.connect(`mongodb://localhost:27017/${config.get("mongodb.database")}`, options, (err) => {
-  if (err) {
-    console.log(`Connect DB failed. Error ${err}`);
-  } else {
-    console.log('Connect DB successfully');
-  }
-});
-
-// mkdir /c/Users/Administrator/Desktop/Project/database
-// mongod --port 27017 --dbpath /c/Users/Administrator/Desktop/Project/database
-// mongo --port 27017
-// use project_node_vue
-// db.createUser({user:"admin", pwd:"admin", roles: ["readWrite", "dbAdmin", "dbOwner"]})
-// mongod --auth --port 27017 --dbpath /c/Users/Administrator/Desktop/Project/database
-// mongo --port 27017 -u "admin" -p "admin" --authenticationDatabase "project_node_vue"
-
-
-// mkdir /Users/thanh/Desktop/database
-// mongod --port 27017 --dbpath /Users/thanh/Desktop/database
-// mongo --port 27017
-// use project_node_vue
-// db.createUser({user:"admin", pwd:"admin", roles: ["readWrite", "dbAdmin", "dbOwner"]})
-// mongod --auth --port 27017 --dbpath /Users/thanh/Desktop/database
-// mongo --port 27017 -u "admin" -p "admin" --authenticationDatabase "project_node_vue"
 
 
 // view engine setup
