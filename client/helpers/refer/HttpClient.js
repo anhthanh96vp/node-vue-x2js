@@ -1,4 +1,4 @@
-import  Client  from "./Client"
+import  Client  from '@/helpers/refer/Client'
 /**
  * Base HTTP Client
  */
